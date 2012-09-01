@@ -2,6 +2,10 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+  @books = Book.search(params[:search])
+  end
+
+  def index
     @books = Book.all
 
     respond_to do |format|
